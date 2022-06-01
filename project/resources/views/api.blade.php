@@ -13,8 +13,19 @@
         <div class="content">
             <div class="block block-rounded">
                 <div class="block-content">
-                    <h2 class="content-heading">Tərçümə əlavə et</h2>
-                    <form action="{{ route('addTranslatePost') }}" method="POST" enctype="multipart/form-data">
+                    <h2 class="content-heading mt-5">Tərçümə əlavə et</h2>
+                    @if (isset($errors))
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                      <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                      </ul>
+                    </div>
+                @endif 
+                    @endif
+                    <form action="{{ route('addTranslateApiPost') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                       <div class="card-body">
                         <div class="form-group">

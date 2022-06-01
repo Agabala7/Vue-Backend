@@ -24,3 +24,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/get-translate',[listTranslationsController::class, "getTranslate"])->name("getTranslate");
 Route::get('/add-translate',[addTranslationsApiController::class, "addTranslate"])->name("addTranslate");
 Route::post('/add-translate',[addTranslationsApiController::class, "addTranslatePost"])->name("addTranslatePost");
+
+Route::get('/api',[addTranslationsApiController::class, "addTranslateApi"])->name("addTranslateApi");
+Route::post('/api',[addTranslationsApiController::class, "addTranslateApiPost"])->name("addTranslateApiPost");
